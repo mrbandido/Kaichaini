@@ -1,8 +1,9 @@
-import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
+﻿import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
 import { useAuth } from './context/AuthContext';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Inicio from './pages/Inicio';
+import Perfil from './pages/Perfil';
 
 function Cargando() {
   return <div className="pantalla-centro"><div className="spinner" /></div>;
@@ -34,6 +35,7 @@ export default function App() {
 
       <Route element={<Privada />}>
         <Route path="/" element={<Inicio />} />
+        <Route path="/perfil" element={<Perfil />} />
       </Route>
 
       <Route path="*" element={<Navigate to="/" replace />} />
