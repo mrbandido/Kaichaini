@@ -1,6 +1,6 @@
 require('dotenv').config();
 const app = require('./app');
-const sequelize = require('./config/database');
+const { sequelize } = require('./models');
 
 const PORT = process.env.PORT || 4000;
 
@@ -11,6 +11,7 @@ async function iniciar() {
   }
   try {
     await sequelize.authenticate();
+    await sequelize.sync(); // crea las tablas si no existen
     console.log('Conectado a PostgreSQL');
     app.listen(PORT, () => console.log(`API Kaichaini en http://localhost:${PORT}/api`));
   } catch (err) {
