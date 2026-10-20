@@ -139,3 +139,38 @@ a.btn { display: inline-block; text-decoration: none; }
   .perfil-cabecera { flex-direction: column; text-align: center; }
   .perfil-stats { margin-left: 0; }
 }
+
+/* ===== Navegación persistente (H.U. 08) ===== */
+.app-layout { min-height: 100%; }
+.app-contenido { max-width: 1160px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+.app-contenido .pagina-inicio, .app-contenido .perfil { padding-top: 0; }
+.topnav { position: sticky; top: 0; z-index: 15; background: #fff; border-bottom: 2px solid var(--borde); }
+.topnav-interno { max-width: 1160px; margin: 0 auto; display: flex; align-items: center; gap: 1.5rem; padding: 0.55rem 1rem; }
+.topnav .marca { text-decoration: none; color: var(--naranja-osc); }
+.topnav-links { display: flex; gap: 0.3rem; flex: 1; }
+.toplink { display: flex; align-items: center; gap: 0.4rem; padding: 0.55rem 1rem; border-radius: 12px; text-decoration: none; color: var(--gris); font-weight: 800; border: 2px solid transparent; }
+.toplink:hover { background: #fdf3e8; color: var(--tinta); }
+.toplink.activo { color: var(--acento); border-color: color-mix(in srgb, var(--acento) 30%, white); background: color-mix(in srgb, var(--acento) 10%, white); }
+.topnav-usuario { display: flex; align-items: center; gap: 0.75rem; }
+.topnav-perfil { display: flex; align-items: center; gap: 0.45rem; text-decoration: none; color: var(--tinta); font-weight: 800; }
+.xp-chip { background: #fff7d6; color: #8a6500; font-weight: 800; padding: 0.4rem 0.8rem; border-radius: 999px; border: 2px solid #f6e3a1; }
+.pantalla-centro.columna { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 1rem; min-height: 60vh; }
+
+/* ===== Onboarding (H.U. 06) ===== */
+.onboarding { min-height: 100%; max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; justify-content: center; padding: 2rem 1rem; }
+.saltar { position: fixed; top: 1rem; right: 1.5rem; background: none; border: none; color: var(--gris); font-weight: 800; padding: 0.5rem; }
+.onboarding-contenido {
+  display: flex; flex-direction: column; align-items: center; gap: 1.5rem;
+  background: #fff; border: 2px solid var(--borde); border-radius: 28px; padding: 3rem 2.5rem;
+  box-shadow: 0 10px 40px rgba(201, 79, 12, 0.08); animation: entrar 0.35s ease-out;
+}
+@keyframes entrar { from { opacity: 0; transform: translateY(12px); } }
+.onboarding-visual { font-size: 4.5rem; letter-spacing: 0.15em; }
+.onboarding .kai-dice { max-width: 640px; }
+.onboarding .globo h2 { font-size: 1.9rem; }
+.onboarding .globo p { font-size: 1.12rem; }
+.onboarding-pie { padding-top: 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.puntos { display: flex; gap: 0.4rem; }
+.punto { width: 10px; height: 10px; border-radius: 50%; background: var(--borde); transition: all 0.2s; }
+.punto.activo { width: 26px; border-radius: 6px; background: var(--naranja); }
+.onboarding-botones { display: flex; gap: 0.75rem; justify-content: center; }

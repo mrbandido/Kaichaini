@@ -13,4 +13,8 @@ const putPassword = async (req, res) => {
   res.json({ mensaje: 'Contraseña actualizada correctamente' });
 };
 
-module.exports = { getPerfil, putPerfil, putPassword };
+const putOnboarding = async (req, res) => {
+  res.json(await usuarioService.completarOnboarding(req.usuario.id));
+};
+
+module.exports = { getPerfil, putPerfil, putPassword, putOnboarding };

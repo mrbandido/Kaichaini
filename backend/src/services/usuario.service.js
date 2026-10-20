@@ -48,4 +48,12 @@ async function cambiarPassword(id, { passwordActual, passwordNueva, confirmarPas
   await usuario.save();
 }
 
-module.exports = { obtenerPerfil, actualizarPerfil, cambiarPassword };
+// H.U. 06 - Marcar el onboarding como visto (completado o saltado)
+async function completarOnboarding(id) {
+  const usuario = await buscar(id);
+  usuario.onboardingCompletado = true;
+  await usuario.save();
+  return usuarioPublico(usuario);
+}
+
+module.exports = { obtenerPerfil, actualizarPerfil, cambiarPassword, completarOnboarding };
