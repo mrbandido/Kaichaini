@@ -1,0 +1,24 @@
+﻿// Kai, la mascota (inspirada en el gallito de las rocas)
+export default function Kai({ size = 96, animado = false }) {
+  return (
+    <svg className={animado ? 'kai kai-animado' : 'kai'} width={size} height={size} viewBox="0 0 120 120" role="img" aria-label="Kai">
+      <path d="M38 34 C30 10 52 2 60 16 C66 0 92 6 84 30 C96 24 104 40 90 48 Z" fill="#E4500E" />
+      <ellipse cx="60" cy="72" rx="36" ry="38" fill="#F26B1D" />
+      <path d="M30 70 C22 92 40 108 58 106 C44 98 38 86 40 70 Z" fill="#1E1B18" />
+      <ellipse cx="66" cy="88" rx="18" ry="16" fill="#FFB27A" />
+      <circle cx="72" cy="56" r="11" fill="#fff" />
+      <circle cx="75" cy="57" r="6" fill="#1E1B18" />
+      <circle cx="77" cy="54" r="2" fill="#fff" />
+      <path d="M86 62 L104 68 L86 74 Z" fill="#F2B705" />
+    </svg>
+  );
+}
+
+export function KaiDice({ children, size = 88 }) {
+  return (
+    <div className="kai-dice">
+      <Kai size={size} animado />
+      <div className="globo">{children}</div>
+    </div>
+  );
+}

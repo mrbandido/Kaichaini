@@ -1,0 +1,105 @@
+/* ===== Kaichaini · estilos base ===== */
+:root {
+  --naranja: #f26b1d;
+  --naranja-osc: #c94f0c;
+  --rojo: #d64045;
+  --rojo-claro: #fde8e8;
+  --oro: #f2b705;
+  --petroleo: #0f5257;
+  --tinta: #1e1b18;
+  --gris: #6b6560;
+  --borde: #eadfd2;
+  --fondo: #fff8ee;
+  --radio: 16px;
+  --sombra: 0 4px 0 rgba(30, 27, 24, 0.08);
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body { margin: 0; font-family: 'Nunito', system-ui, sans-serif; color: var(--tinta); background: var(--fondo); }
+h1, h2, h3 { font-family: 'Baloo 2', 'Nunito', sans-serif; line-height: 1.15; margin: 0 0 0.4em; }
+p { line-height: 1.5; margin: 0 0 0.6em; }
+a { color: var(--naranja-osc); font-weight: 700; }
+button { font: inherit; cursor: pointer; }
+input, select { font: inherit; }
+
+/* Botones */
+.btn { border: none; border-radius: 14px; padding: 0.85rem 1.4rem; font-weight: 800; font-size: 1rem; transition: transform 0.08s; }
+.btn:active:not(:disabled) { transform: translateY(2px); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-primario { background: var(--naranja); color: #fff; box-shadow: 0 4px 0 var(--naranja-osc); }
+.btn-secundario { background: #fff; color: var(--petroleo); border: 2px solid var(--borde); box-shadow: 0 3px 0 var(--borde); }
+.btn-bloque { width: 100%; }
+
+/* Formularios */
+.campo { margin-bottom: 0.9rem; }
+.campo label { display: block; font-weight: 700; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.campo-input { position: relative; }
+.campo input, .campo select { width: 100%; padding: 0.8rem 0.9rem; border: 2px solid var(--borde); border-radius: 12px; background: #fff; outline: none; }
+.campo input:focus, .campo select:focus { border-color: var(--naranja); }
+.campo.con-error input, .campo.con-error select { border-color: var(--rojo); }
+.error-texto { color: var(--rojo); font-weight: 700; font-size: 0.82rem; display: block; margin-top: 0.25rem; }
+.ver-clave { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 1.1rem; }
+.alerta-error { background: var(--rojo-claro); color: var(--rojo); padding: 0.7rem 0.9rem; border-radius: 12px; font-weight: 700; margin-bottom: 0.9rem; }
+
+/* Login / Registro: pantalla partida */
+.auth-pagina { min-height: 100%; display: grid; grid-template-columns: 1.1fr 1fr; }
+.auth-hero {
+  display: flex; align-items: center; justify-content: center; padding: 3rem; color: #fff;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(242, 183, 5, 0.35) 0, transparent 35%),
+    radial-gradient(circle at 10% 90%, rgba(242, 107, 29, 0.45) 0, transparent 40%),
+    var(--petroleo);
+}
+.auth-hero-interno { max-width: 480px; }
+.auth-hero h1 { font-size: 3rem; margin: 1.5rem 0 0.8rem; }
+.auth-hero p { font-size: 1.15rem; opacity: 0.9; }
+.auth-hero small { opacity: 0.7; font-weight: 700; }
+.auth-beneficios { list-style: none; padding: 0; margin: 1.8rem 0; display: grid; gap: 0.8rem; }
+.auth-beneficios li { display: flex; align-items: center; gap: 0.8rem; font-weight: 700; }
+.auth-beneficios span { width: 42px; height: 42px; flex-shrink: 0; display: grid; place-items: center; border-radius: 12px; background: rgba(255, 255, 255, 0.12); font-size: 1.3rem; }
+.auth-formulario { display: grid; place-items: center; padding: 2rem 1.5rem; }
+.auth-tarjeta { width: 100%; max-width: 440px; background: #fff; border-radius: 24px; padding: 2rem 1.8rem; box-shadow: 0 10px 40px rgba(201, 79, 12, 0.1); border: 2px solid var(--borde); }
+.auth-marca { text-align: center; margin-bottom: 1.2rem; }
+.auth-marca h1 { font-size: 2rem; color: var(--naranja-osc); margin: 0.3rem 0 0; }
+.auth-marca p { color: var(--gris); margin: 0; }
+.auth-pie { text-align: center; margin: 1rem 0 0; color: var(--gris); }
+.marca { display: flex; align-items: center; gap: 0.4rem; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 1.55rem; }
+.marca-grande { font-size: 2.2rem; color: #fff; }
+.selector-rol { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 1rem; }
+.rol { border: 2px solid var(--borde); background: #fff; border-radius: 12px; padding: 0.7rem 0.4rem; font-weight: 700; }
+.rol.activo { border-color: var(--naranja); background: #fff1e6; color: var(--naranja-osc); }
+
+/* Kai */
+.kai-animado { animation: flotar 3s ease-in-out infinite; }
+@keyframes flotar { 50% { transform: translateY(-6px); } }
+.kai-dice { display: flex; align-items: flex-end; gap: 0.75rem; max-width: 520px; }
+.kai-dice .kai { flex-shrink: 0; }
+.globo { position: relative; background: #fff; border: 2px solid var(--borde); border-radius: 18px; padding: 1rem 1.1rem; box-shadow: var(--sombra); }
+.globo p:last-child { margin-bottom: 0; }
+
+/* Inicio (temporal) */
+.pagina-inicio { max-width: 1000px; margin: 0 auto; padding: 2rem 1rem; display: grid; gap: 1.5rem; justify-items: start; }
+.grado-banner {
+  width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  background: var(--acento); color: #fff; border-radius: 24px; padding: 2rem 2.2rem;
+  box-shadow: 0 6px 0 color-mix(in srgb, var(--acento) 70%, black);
+}
+.grado-banner h1 { font-size: 2.2rem; margin: 0.3rem 0; }
+.grado-banner p { margin: 0; opacity: 0.92; }
+.grado-etiqueta { display: inline-block; background: rgba(255,255,255,0.2); padding: 0.25rem 0.75rem; border-radius: 999px; font-weight: 800; font-size: 0.85rem; }
+.grado-numero { font-family: 'Baloo 2', sans-serif; font-size: 7rem; font-weight: 800; line-height: 0.8; opacity: 0.25; }
+
+/* Utilidades */
+.pantalla-centro { min-height: 60vh; display: grid; place-items: center; }
+.spinner { width: 40px; height: 40px; border: 4px solid var(--borde); border-top-color: var(--naranja); border-radius: 50%; animation: girar 0.8s linear infinite; }
+@keyframes girar { to { transform: rotate(360deg); } }
+
+/* Celular */
+@media (max-width: 900px) {
+  .auth-pagina { grid-template-columns: 1fr; }
+  .auth-hero { padding: 2rem 1.5rem; }
+  .auth-hero h1 { font-size: 2rem; }
+  .auth-beneficios, .auth-hero small { display: none; }
+  .grado-numero { font-size: 4.5rem; }
+}
